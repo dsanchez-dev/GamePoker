@@ -30,7 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="18sp" />>
+        android:textSize="18sp" />
 
     <GridView
         android:id="@+id/cuadriculaVista"
@@ -45,6 +45,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Reiniciar"
+        android:backgroundTint="#18202B"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/botonSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Salir"
         android:backgroundTint="#18202B"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
