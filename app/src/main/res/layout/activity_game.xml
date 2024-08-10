@@ -61,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez| 9-B | TI  2021-2024."
-        android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez"
         android:textSize="17sp" />
 
 
