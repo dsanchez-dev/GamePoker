@@ -3,16 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_games"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/tituloJuegoTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="388dp"
         android:layout_height="wrap_content"
         android:text="Memorama de Póker"
+        android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/movimientosTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Movimientos: 0"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
     <TextView
         android:id="@+id/temporizadorTextView"
         android:layout_width="wrap_content"
@@ -26,32 +38,18 @@
         android:layout_height="wrap_content"
         android:numColumns="4"
         android:stretchMode="columnWidth" />
-    <TextView
-        android:id="@+id/movimientosTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Movimientos: 0"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"/>
 
     <Button
-    android:id="@+id/botonReiniciar"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Reiniciar"
-    android:layout_gravity="center_horizontal" />
-    <Button
-        android:id="@+id/botonSalir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Salir"
-        android:layout_gravity="center_horizontal" />
-
-    <TextView
+        android:id="@+id/botonReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="17sp" />
+        android:text="Reiniciar"
+        android:backgroundTint="#18202B"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,6 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez| 9-B | TI  2021-2024."
+        android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez"
         android:textSize="17sp" />
 
 
