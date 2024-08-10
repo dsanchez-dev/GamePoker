@@ -7,13 +7,13 @@
     android:padding="16dp">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imagenVista3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/endloop" />
 
     <Button
-        android:id="@+id/restartButton"
+        android:id="@+id/botonReiniciar"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
