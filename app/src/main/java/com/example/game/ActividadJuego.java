@@ -4,10 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.View;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,9 +52,18 @@ public class ActividadJuego extends AppCompatActivity {
         configurarTableroJuego();
 
         botonReiniciar.setOnClickListener(v -> reiniciarJuego());
+
+        Button botonSalir = findViewById(R.id.botonSalir);
+        botonSalir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void configurarTableroJuego() {
+    try {
         tarjetas = obtenerTarjetasMezcladas();
         AdaptadorTarjeta adaptador = new AdaptadorTarjeta(this, tarjetas);
         cuadriculaVista.setAdapter(adaptador);
@@ -71,10 +82,22 @@ public class ActividadJuego extends AppCompatActivity {
             @Override
             public void onFinish() {
                 temporizadorTextView.setText("Tiempo: 0s");
-                finalizarJuego();
+                Intent intent = new Intent(ActividadJuego.this, ActividadPerder.class);
+                startActivity(intent);
+                finish();
             }
         }.start();
+    } catch (Exception e) {
+        // Aquí puedes manejar la excepción, por ejemplo, mostrando un mensaje al usuario
+        Toast.makeText(this, "Ha ocurrido un error al configurar el tablero de juego. Regresando a la pantalla de inicio.", Toast.LENGTH_SHORT).show();
+        e.printStackTrace();
+
+        // Iniciar la ActividadPrincipal nuevamente
+        Intent intent = new Intent(this, ActividadPrincipal.class);
+        startActivity(intent);
+        finish();
     }
+}
 
     private List<Tarjeta> obtenerTarjetasMezcladas() {
         List<Tarjeta> tarjetas = new ArrayList<>();
@@ -177,7 +200,9 @@ public class ActividadJuego extends AppCompatActivity {
         }
         // Si todas las tarjetas han sido emparejadas, terminar el juego
         if (todasEmparejadas) {
-            finalizarJuego();
+            Intent intent = new Intent(this, ActividadGanar.class);
+            startActivity(intent);
+            finish();
         }
     }
 }

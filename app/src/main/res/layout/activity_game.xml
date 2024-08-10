@@ -40,16 +40,30 @@
     android:layout_height="wrap_content"
     android:text="Reiniciar"
     android:layout_gravity="center_horizontal" />
+    <Button
+        android:id="@+id/botonSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez"
-        android:textSize="17sp"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:textSize="17sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="17sp" />
 
-
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez| 9-B | TI  2021-2024."
+        android:textSize="17sp" />
 
 
 </LinearLayout>
