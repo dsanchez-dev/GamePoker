@@ -33,6 +33,7 @@
             android:id="@+id/botonJugar"
             android:layout_width="179dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:text="Jugar" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
         android:id="@+id/botonReiniciar"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:text="Reiniciar" />
 
 </LinearLayout>
