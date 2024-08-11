@@ -30,6 +30,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
         android:textSize="18sp" />
 
     <GridView
@@ -71,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:textColor="#FFFFFF"
         android:text="Desarrollado por: Daniel Sanchez Gonzalez y Benjamin Tecuapacho Mendez| 9-B | TI  2021-2024."
         android:textSize="17sp" />
 

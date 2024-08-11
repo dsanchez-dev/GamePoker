@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:textColor="#FFFFFF"
         android:text="¡Felicidades, has ganado!"
+        android:layout_gravity="center_horizontal"
         android:textSize="24sp" />
 
     <Button
