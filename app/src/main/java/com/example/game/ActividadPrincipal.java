@@ -12,18 +12,30 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Esta clase representa la actividad principal de la aplicación.
+ * Extiende de AppCompatActivity.
+ */
 public class ActividadPrincipal extends AppCompatActivity {
+    // Campo de texto para ingresar el nombre del jugador
     private EditText editTextNombreJugador;
+    // Botón para iniciar el juego
     private Button botonJugar;
 
+    /**
+     * Este método se llama cuando se crea la actividad.
+     * Inicializa la vista y configura el campo de texto y el botón.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Inicializa el campo de texto y el botón
         editTextNombreJugador = findViewById(R.id.editTextNombreJugador);
         botonJugar = findViewById(R.id.botonJugar);
 
+        // Configura el comportamiento del campo de texto cuando se presiona la tecla Enter
         editTextNombreJugador.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -35,6 +47,7 @@ public class ActividadPrincipal extends AppCompatActivity {
             }
         });
 
+        // Configura el comportamiento del botón cuando se hace clic en él
         botonJugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,6 +56,10 @@ public class ActividadPrincipal extends AppCompatActivity {
         });
     }
 
+    /**
+     * Este método inicia el juego.
+     * Verifica que el nombre del jugador no esté vacío y luego inicia la actividad del juego.
+     */
     private void iniciarJuego() {
         String nombreJugador = editTextNombreJugador.getText().toString();
         if (nombreJugador.isEmpty()) {
