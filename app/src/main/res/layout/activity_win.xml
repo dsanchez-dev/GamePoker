@@ -2,30 +2,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/poker"
+    android:background="@drawable/bg_win"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imagenVista3"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/endloop" />
+        android:layout_height="305dp"
+        android:background="#7E6D6D6D"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086">
 
-    <TextView
-        android:id="@+id/winMessageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:text="¡Felicidades, has ganado!"
-        android:layout_gravity="center_horizontal"
-        android:textSize="24sp" />
+        <ImageView
+            android:id="@+id/imagenVista3"
+            android:layout_width="match_parent"
+            android:layout_height="223dp"
+            app:srcCompat="@drawable/you_win" />
+
+        <TextView
+            android:id="@+id/winMessageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#90474747"
+            android:text="¡Felicidades ganaste!"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/botonReiniciar"
         android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:backgroundTint="#1B1B1B"
         android:text="Reiniciar" />
 
 </LinearLayout>

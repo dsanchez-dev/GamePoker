@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 /**
  * Esta clase representa la actividad que se muestra cuando el jugador gana el juego.
  * Extiende de AppCompatActivity.
+ * Esta clase proporciona una interfaz simple para indicar la victoria y permite reiniciar el juego fácilmente.
  */
 public class ActividadGanar extends AppCompatActivity {
     // Botón para reiniciar el juego

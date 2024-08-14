@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Esta clase representa la actividad del juego.
+ * Contiene la lógica del juego y la configuración de la cuadrícula.
+ */
 public class ActividadJuego extends AppCompatActivity {
     private String nombreJugador; // Nombre del jugador
     private int movimientos = 0; // Contador de movimientos realizados por el jugador
@@ -66,7 +70,7 @@ public class ActividadJuego extends AppCompatActivity {
             public void onClick(View v) {
                 finish(); // Termina la actividad actual
             }
-        });
+        }); // End Configura el botón de salir
     }
 
     // Configura el tablero del juego, mezclando las tarjetas y configurando el temporizador
@@ -80,7 +84,7 @@ public class ActividadJuego extends AppCompatActivity {
             cuadriculaVista.setOnItemClickListener((parent, view, position, id) -> {
                 Tarjeta tarjetaSeleccionada = tarjetas.get(position);
                 manejarSeleccionTarjeta(tarjetaSeleccionada); // Maneja la selección de la tarjeta
-            });
+            }); // End Configura el evento de clic
 
             // Configura el temporizador del juego (2 minutos)
             temporizadorJuego = new CountDownTimer(120000, 1000) {
@@ -97,7 +101,7 @@ public class ActividadJuego extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
-            }.start();
+            }.start(); // End Configura el temporizador
         } catch (Exception e) {
             // Manejo de excepción: muestra un mensaje y regresa a la pantalla principal
             Toast.makeText(this, "Ha ocurrido un error al configurar el tablero de juego. Regresando a la pantalla de inicio.", Toast.LENGTH_SHORT).show();
@@ -108,7 +112,7 @@ public class ActividadJuego extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-    }
+    } // End Configura el tablero del juego
 
     // Obtiene y mezcla las tarjetas para el juego
     private List<Tarjeta> obtenerTarjetasMezcladas() {
@@ -134,7 +138,7 @@ public class ActividadJuego extends AppCompatActivity {
         // Mezcla las tarjetas aleatoriamente
         Collections.shuffle(tarjetas);
         return tarjetas;
-    }
+    } // End Obtiene y mezcla las tarjetas
 
     // Maneja la selección de una tarjeta por el jugador
     private void manejarSeleccionTarjeta(Tarjeta tarjetaSeleccionada) {
@@ -155,7 +159,7 @@ public class ActividadJuego extends AppCompatActivity {
             conteoTurnos++;
             ((BaseAdapter) cuadriculaVista.getAdapter()).notifyDataSetChanged();
             return;
-        }
+        } // End Si no hay tarjeta seleccionada previamente
 
         // Si ya hay una tarjeta seleccionada previamente
         if (ultimaTarjetaSeleccionada != null) {
@@ -170,8 +174,9 @@ public class ActividadJuego extends AppCompatActivity {
                 ultimaTarjetaSeleccionada = null;
                 conteoTurnos = 0;
                 verificarFinJuego(); // Verifica si el juego ha terminado
-            } else {
-                // Si las tarjetas no coinciden, se voltean nuevamente después de un breve tiempo
+            } // End si las tarjetas coinciden, se emparejan
+            else {
+                // Else Si las tarjetas no coinciden, se voltean nuevamente después de un breve tiempo
                 new CountDownTimer(1000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
@@ -186,25 +191,26 @@ public class ActividadJuego extends AppCompatActivity {
                         ((BaseAdapter) cuadriculaVista.getAdapter()).notifyDataSetChanged();
                     }
                 }.start();
-            }
-        }
+            } // End Else si las tarjetas no coinciden, se voltean nuevamente después de un breve tiempo
+        } // End Si ya hay una tarjeta seleccionada previamente
 
         // Incrementa el número de movimientos realizados y actualiza la vista
         movimientos++;
         movimientosTextView.setText("Movimientos: " + movimientos);
-    }
+    } // End Maneja la selección
 
     // Reinicia el juego a su estado inicial
     private void reiniciarJuego() {
+        // For reestableser targetas
         for (Tarjeta tarjeta : tarjetas) {
             tarjeta.setVolteada(false);
             tarjeta.setEmparejada(false);
-        }
+        } // End For reestableser targetas
         Collections.shuffle(tarjetas); // Vuelve a mezclar las tarjetas
         ((BaseAdapter) cuadriculaVista.getAdapter()).notifyDataSetChanged();
         movimientos = 0;
         movimientosTextView.setText("Movimientos: " + movimientos);
-    }
+    } // End Reinicia el juego a su estado inicial
 
     // Finaliza el juego y envía los datos a la actividad de resultados
     private void finalizarJuego() {
@@ -218,17 +224,18 @@ public class ActividadJuego extends AppCompatActivity {
     private void verificarFinJuego() {
         // Verifica si todas las tarjetas han sido emparejadas
         boolean todasEmparejadas = true;
+        // For para verificar si todas las tarjetas han sido emparejadas
         for (Tarjeta tarjeta : tarjetas) {
             if (!tarjeta.estaEmparejada()) {
                 todasEmparejadas = false;
                 break;
             }
-        }
+        }// End For para verificar si todas las tarjetas han sido emparejadas
         // Si todas las tarjetas han sido emparejadas, se dirige a la actividad de "ganar"
         if (todasEmparejadas) {
             Intent intent = new Intent(this, ActividadGanar.class);
             startActivity(intent);
             finish();
-        }
-    }
+        }// End Verifica Si todas las tarjetas han sido emparejadas, se dirige a la actividad de "ganar"
+    }// verificar fin juego
 }
